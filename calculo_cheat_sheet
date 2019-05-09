@@ -1,0 +1,219 @@
+\documentclass[a4paper,10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{blindtext}
+
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+\pagestyle{empty}
+ 
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\setcounter{secnumdepth}{0}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+% -----------------------------------------------------------------------
+\begin{document}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\textbf{Resumo Cálculo}} \\
+\end{center}
+
+\section{Propriedades dos limites}
+
+\begin{enumerate}[leftmargin=*]
+
+\item \textbf{Propriedade da unicidade do limite}
+
+Se $\Lim{x\rightarrow a}f(x)=L$ e $\Lim{x\rightarrow a}f(x)=M$, então $L=M$
+
+\item \textbf{Propriedade do limite de uma função constante}
+
+Se $f(x)=k$ para todo $x$ real, então para qualquer $a$ real:\\
+$\Lim{x\rightarrow a}f(x)=\Lim{x\rightarrow a}k=k$
+
+\item \textbf{Propriedade da soma e subtração de limites}
+
+Se $\Lim{x\rightarrow a}f(x)=L$ e $\Lim{x\rightarrow a}g(x)=M$ então:\\
+$\Lim{x\rightarrow a}(f(x)\pm g(x))=\Lim{x\rightarrow a}f(x)\pm\Lim{x\rightarrow a}g(x)=L\pm M$
+
+\item \textbf{Propriedade da multiplicação por escalar do limite}
+
+Para qualquer constante $k$ e $\Lim{x\rightarrow a}f(x)=L$:\\
+$\Lim{x\rightarrow a}(k\cdot f(x))=k\cdot\Lim{x\rightarrow a}f(x)=k\cdot L$
+
+\item \textbf{Propriedade da multiplicação de limites}
+
+Se $\Lim{x\rightarrow a}f(x)=L$ e $\Lim{x\rightarrow a}g(x)=M$ então:\\
+$\Lim{x\rightarrow a}(f(x)\times g(x))=\Lim{x\rightarrow a}f(x)\times\Lim{x\rightarrow a}g(x)=L\times M$
+
+\item \textbf{Propriedade da divisão de limites}
+
+Se $\Lim{x\rightarrow a}f(x)=L$ e $\Lim{x\rightarrow a}g(x)=M$ e $M\neq 0$ então:\\
+$\Lim{x\rightarrow a}\frac{f(x)}{g(x)}=\frac{\Lim{x\rightarrow a}f(x)}{\Lim{x\rightarrow a}g(x)}=\frac{L}{M}$
+
+\item \textbf{Propriedade da potência de limites}
+
+Se $\Lim{x\rightarrow a}f(x)=L$ então:\\
+$\Lim{x\rightarrow a}(f(x))^n=(\Lim{x\rightarrow a}f(x))^n=L^n$
+
+\item \textbf{Propriedade da exponencial do limite}
+
+Se $\Lim{x\rightarrow a}f(x)=L$ e $b\in R$ então:\\
+$\Lim{x\rightarrow a}b^{f(x)}=b^{\Lim{x\rightarrow a}f(x)}=b^L$
+
+\item \textbf{Propriedade do logarítmo do limite}
+
+Se $\Lim{x\rightarrow a}f(x)=L$, $L>0$, $b\in R$, $b>0$ e $b\neq 1$ então:\\
+$\Lim{x\rightarrow a}(\log_b{f(x)})=\log_b{(\Lim{x\rightarrow a}f(x))}=\log_b{L}$
+
+\item \textbf{Propriedade da raiz do limite}
+
+Se $\Lim{x\rightarrow a}f(x)=L$, $n \in N$ e $L>0$  quando $n$ for par:\\
+$\Lim{x\rightarrow a}\sqrt[n]{f(x)}=\sqrt[n]{\Lim{x\rightarrow a}f(x)}=\sqrt[n]{L}$
+
+\item \textbf{Propriedade do confronto do limite}
+
+Se $\Lim{x\rightarrow a} h(x) = \Lim{x\rightarrow a} g(x) = L$ tal que $h(x)\leq f(x) \leq g(x)$ então:\\
+$\Lim{x\rightarrow a}f(x)=L$
+
+\item \textbf{Propriedade dos polinômios}
+
+Seja $p(x)=b_n x^n + b_{n-1} x^{n-1} + \ldots + b_1 x + b_0$ um polinômio qualquer onde $b_n$ são constantes arbitrárias, temos:\\
+$\Lim{x\rightarrow a}p(x)=\Lim{x\rightarrow a}(b_n x^n + b_{n-1} x^{n-1} + \ldots + b_1 x + b_0)=$\\
+$=\Lim{x\rightarrow a}b_n x^n + \Lim{x\rightarrow a}b_{n-1} x^{n-1}+\ldots+\Lim{x\rightarrow a}b_1 x+\Lim{x\rightarrow a}b_0=$\\
+$=b_n\Lim{x\rightarrow a}x^n + b_{n-1}\Lim{x\rightarrow a}x^{n-1}+\ldots+b_1\Lim{x\rightarrow a}x+b_0\Lim{x\rightarrow a}=p(a)$\\
+Portanto:\\
+$\Lim{x\rightarrow a}p(x)=p(a)$
+
+\item \textbf{Propriedade da divisão de polinômios}
+
+Nos limites na forma $\Lim{x\rightarrow \pm\infty}\frac{p(x)}{q(x)}$ em que $p$ e $q$ são polinômios em $x$ prevalecem os termos de maior grau de ambos os polinômios quando formos calcular o limite ou seja se:\\
+
+$p(x)=a_m x^m + a_{m-1} x^m + \ldots + a_1 x + a_0$\\
+$q(x)=b_n x^n + b_{n-1} x^n + \ldots + b_1 x + b_0$\\
+
+então:
+
+$\Lim{x\rightarrow \pm\infty}\frac{p(x)}{q(x)}=\Lim{x\rightarrow \pm\infty}\frac{a_m x^m}{b_n x^n}$
+
+\end{enumerate}
+
+\section{Limites fundamentais}
+
+\begin{enumerate}[leftmargin=*]
+
+\item $\Lim{x\rightarrow 0}\frac{\sin{x}}{x}=1$
+
+\item $\Lim{x\rightarrow \pm\infty}\left(1+\frac{1}{x}\right)^x=e$
+
+\item $\Lim{x\rightarrow 0}\frac{a^x-1}{x}=\ln{a}$
+
+\end{enumerate}
+
+\section{Indeterminação de limites}
+
+A indeterminação de limites ocorre quando nos deparamos com as seguintes situações
+
+\begin{center}
+\begin{tabular}{cccc}
+$\frac{0}{0}$ & $0^0$ & $1^\infty$ & $\infty^0$\\[0.2cm]
+$\frac{\pm\infty}{\pm\infty}$ & $(+\infty)-(+\infty)$ & $(-\infty)+(+\infty)$ & $0\cdot(\pm\infty)$
+\end{tabular}
+\end{center}
+Existem 3 modos de eliminar as indeterminações:
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Fatoração (Briot-Rufini)}\\
+Exemplo: $\Lim{x\rightarrow 2}\frac{x^3-8}{x-2}=\frac{0}{0}$\\
+Fatorando obtemos: $\Lim{x\rightarrow 2}\frac{(x-2)(x^2+2x+4)}{x-2}$\\
+Simplificando temos: $\Lim{x\rightarrow}(x^2+2x+4)=12$
+
+\item \textbf{Racionalização}
+Exemplo: $\Lim{x\rightarrow 1}\frac{x-1}{\sqrt{x}-1}=\frac{0}{0}$\\
+Nesse caso multiplicamos o numerador e o denominador pelo termo com a raíz, porém com sinal trocado:\\
+$\frac{x-1}{\sqrt{x}-1}=\frac{(x-1)(\sqrt{x}+1)}{(\sqrt{x}-1)(\sqrt{x}+1)}=\frac{(x-1)(\sqrt{x}-1)}{(x-1)}=\sqrt{x}+1$\\
+Portanto: $\Lim{x\rightarrow 1}\sqrt{x}+1$=2
+
+\item \textbf{Mudança de variável}
+Podemos utilizar um método algébrico de substituição de variáveis.\\
+Exemplo: $\Lim{x\rightarrow +\infty}\frac{\sqrt[3]{x+1}-1}{x}=\frac{+\infty}{+\infty}$\\
+Fazemos $y=\sqrt[3]{x+1}$, elevando ao cubo temos $y^3=x+1$ e $x=y^3-1$\\
+Precisamos também converter o ponto que se quer saber o limite de $x$ para $y$. Podemos dizer que, a partir da equação $y=\sqrt[3]{x+1}$, que quando $x\rightarrow +\infty$, $y\rightarrow +\infty$\\
+Substituindo temos: $\Lim{y\rightarrow +\infty}\frac{y-1}{(y-1)(y^2+y+1)}=\frac{1}{+\infty}=0$
+
+\item \textbf{Regra de L'Hospital}
+
+Usada para resolver indeterminações do tipo $\frac{\infty}{\infty}$ ou $\frac{0}{0}$
+
+\end{enumerate}
+
+\section{Continuidade de uma função}
+
+Uma função $f(x)$ é contínua em $x=0$ apenas se as condições abaixo forem satisfeitas:\\
+
+\begin{enumerate}[leftmargin=*]
+
+\item $f(a)$ está definida
+
+\item $\Lim{x\rightarrow a}f(x)$ existir
+
+\item $\Lim{x\rightarrow a}f(x)=f(a)$
+
+\end{enumerate}
+
+\subsection{Fatoração}
+
+\blindtext
+
+\subsection{Racionalização}
+
+\blindtext
+
+\subsection{Mudança de variável}
+
+\blindtext
+
+\end{multicols}
+\end{document}
